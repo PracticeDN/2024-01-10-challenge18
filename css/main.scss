@@ -1,0 +1,290 @@
+html,
+body {
+  margin: 0;
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  .header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+    .inner {
+      display: flex;
+      align-items: center;
+      width: 120rem;
+      padding: 3rem 0;
+      margin: 0 auto;
+
+      .logo-and-nav {
+        display: flex;
+        gap: 6rem;
+
+        ul {
+          color: white;
+          display: flex;
+          gap: 4rem;
+          font-size: 1.6rem;
+        }
+      }
+
+      .user-container {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        button {
+          background-color: black;
+          color: white;
+          border: 0.5px solid #757575;
+          font-size: 1.6rem;
+          padding: 0.4rem;
+          transition: border 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            border: 0.5px solid #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .banner {
+    min-height: 100vh;
+    background-image: url("https://connectstore.kia.com/kr/ux_data/content/20230620/6aaae971bad74dbabbd73e775cbfa720.jpg");
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+
+    .inner {
+      width: 120rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+
+      strong {
+        color: white;
+        font-size: 8rem;
+      }
+
+      button {
+        position: relative;
+        width: 12rem;
+        height: 6rem;
+        font-size: 1.6rem;
+        background-color: white;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+
+        @mixin buttonSide {
+          position: absolute;
+          content: "";
+          width: 3rem;
+          height: 100%;
+          background-color: white;
+        }
+
+        &::before {
+          @include buttonSide();
+          top: 0;
+          left: 0;
+          transform: translateX(-100%);
+          background: linear-gradient(135deg, transparent 2rem, white 0);
+        }
+
+        &::after {
+          @include buttonSide();
+          top: 0;
+          right: 0;
+          transform: translateX(100%);
+          background: linear-gradient(-45deg, transparent 2rem, white 0);
+        }
+
+        &:hover {
+          background-color: orange;
+          &::before {
+            background-color: orange;
+            background: linear-gradient(135deg, transparent 2rem, orange 0);
+          }
+          &::after {
+            background-color: orange;
+            background: linear-gradient(-45deg, transparent 2rem, orange 0);
+          }
+        }
+      }
+    }
+  }
+
+  .main-contents {
+    width: 120rem;
+    margin: 0 auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    h2 {
+      font-size: 5.2rem;
+      font-weight: 600;
+    }
+
+    .main-content {
+      display: flex;
+      border: 1px solid #c2c2c2;
+      margin-top: 6rem;
+
+      img {
+        width: 30%;
+      }
+
+      .content-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+        padding: 4rem;
+
+        .detail-container {
+          display: flex;
+          flex-direction: column;
+
+          .new {
+            font-size: 1.6rem;
+            border: 1px solid #c2c2c2;
+            width: fit-content;
+            padding: 0.5rem;
+            color: #c2c2c2;
+          }
+
+          .title {
+            font-size: 3.6rem;
+            font-weight: 600;
+            margin-top: 2rem;
+          }
+
+          .description {
+            font-size: 1.6rem;
+            color: #676767;
+            margin-top: 2rem;
+          }
+        }
+        .price-and-button {
+          display: flex;
+          justify-content: space-between;
+
+          .price-container {
+            display: flex;
+            gap: 4rem;
+
+            .first-price {
+              position: relative;
+
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -2rem;
+                border-right: 1px solid #c2c2c2;
+                height: 100%;
+              }
+            }
+
+            p {
+              &:first-child {
+                color: #676767;
+                font-size: 1.6rem;
+              }
+
+              &:nth-child(2) {
+                margin-top: 1rem;
+                font-size: 1.6rem;
+                font-weight: 600;
+              }
+            }
+          }
+          button {
+            width: 12rem;
+            background-color: white;
+            border: 1px solid #676767;
+            border-radius: 1rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #676767;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #05141f;
+  padding: 10rem 0;
+
+  .inner {
+    width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 5rem;
+    color: #aaaaaa;
+    font-size: 1.6rem;
+
+    img {
+      height: fit-content;
+    }
+
+    .infos {
+      .links {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        p {
+          &:first-child {
+            color: white;
+            font-weight: 600;
+
+            &::after {
+              content: "";
+              padding-right: 1rem;
+              border-right: 1px solid #aaaaaa;
+            }
+          }
+        }
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .copyright {
+        margin-top: 3rem;
+        color: white;
+      }
+    }
+
+    .call-center-info {
+      margin-left: auto;
+
+      h3 {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}
